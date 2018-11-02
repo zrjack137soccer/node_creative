@@ -4,10 +4,6 @@ body {
     text-align: center;
 }
 
-ul {
-    list-style: none;
-}
-
 h1 {
     font-size: 35px;
     text-shadow: white 2px 2px 10px;
@@ -17,6 +13,21 @@ h1 {
     font-size: 25px;
     text-shadow: white 2px 2px 10px;
     font-weight: bold;
+    background-color: aqua;
+    border-radius: 25px;
+    padding-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#title {
+    text-align: left;
+    color: blue;
+    text-shadow: aqua 2px 2px;
+    margin-left: 200px;
+    margin-top: 30px;
+    margin-bottom: 0px;
 }
 
 img {
@@ -30,4 +41,9 @@ img {
     font-size: 20px;
     text-shadow: white 2px 2px 10px;
     font-weight: bold;
+}
+
+h2 {
+    font-size: 30px;
+    text-shadow: white 2px 2px 10px;
 }

@@ -10,9 +10,16 @@
 </head>
 
 <body>
-    <h1>The weather forecast is:</h1>
+    <h1 id = "title">Popular City Forecaster</h1>
     <br>
     <div ng-app="myApp" ng-controller="myCtrl">
+        <p id="validity">Please enter a valid city.</p>
+        <form ng-submit="forecast()" id="weatherInputForm">
+            <input id="inputCity" ng-model="userCity" type="text" placeholder="Enter a city to search" />
+            <button type="submit" id="weatherBtn">Submit</button>
+        </form>
+        <br>
+        <h2>{{userCity}}</h2>
         <div ng-repeat="day in forecastList" id="forecastedWeather">
             <img src="https://www.metaweather.com/static/img/weather/png/64/{{day.weather_state_abbr}}.png" />
             <br>
@@ -22,14 +29,7 @@
             <p>The wind speed will be {{day.wind_speed}} mph</p>
             <p>The humidity will be {{day.humidity}}%</p>
             <br>
-            <br>
         </div>
-        <br>
-        <p id="validity">Please enter a valid city.</p>
-        <form ng-submit="forecast()" id="weatherInputForm">
-            <input id="inputCity" ng-model="userCity" type="text" placeholder="Enter a city to search" />
-            <button type="submit" id="weatherBtn">Submit</button>
-        </form>
 </body>
 
 </html>
