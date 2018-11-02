@@ -7,3 +7,8 @@ body {
 ul {
     list-style: none;
 }
+
+h1 {
+    font-size: 35px;
+    text-shadow: white 2px 2px 10px;
+}

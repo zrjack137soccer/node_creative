@@ -13,7 +13,7 @@ router.get('/woeid', function(req, res, next) {
 });
 
 router.get('/forecast', function(req, res, next) {
-  var url = "https://www.metaweather.com/api/location/" + req.query.q + "/";
+  var url = "https://www.metaweather.com/api/location/" + req.query.q;
   request(url).pipe(res);
 });
 
