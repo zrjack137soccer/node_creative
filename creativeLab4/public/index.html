@@ -1,24 +1,35 @@
 <html>
-    <head>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-        <script src="javascripts/angular.js"></script>
-        <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-        <meta charset="utf-8">
-         
-    </head>
-    
-    <body>
-        <h1>The weather forecast is:</h1>
-        <div ng-app="myApp" ng-controller="myCtrl">
-            <div ng-repeat="day in forecastList" id="forecastedWeather">
-            <p>{{day}}</p>
-            </div>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="javascripts/angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <h1>The weather forecast is:</h1>
+    <br>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <div ng-repeat="day in forecastList" id="forecastedWeather">
+            <img src="https://www.metaweather.com/static/img/weather/png/64/{{day.weather_state_abbr}}.png" />
             <br>
-            <form ng-submit="forecast()" id="weatherInputForm">
-                <input id="inputCity" ng-model="userCity" type="text" placeholder="Enter a city to search" />
-                <button type="submit" id="weatherBtn">Submit</button>
-            </form>
-    </body>
-    
+            <p>The weather for {{day.applicable_date}} will be: {{day.weather_state_name}}</p>
+            <p>The low for today will be {{day.min_temp}} centigrade</p>
+            <p>The high for today will be {{day.max_temp}} centigrade</p>
+            <p>The wind speed will be {{day.wind_speed}} mph</p>
+            <p>The humidity will be {{day.humidity}}%</p>
+            <br>
+            <br>
+        </div>
+        <br>
+        <p id="validity">Please enter a valid city.</p>
+        <form ng-submit="forecast()" id="weatherInputForm">
+            <input id="inputCity" ng-model="userCity" type="text" placeholder="Enter a city to search" />
+            <button type="submit" id="weatherBtn">Submit</button>
+        </form>
+</body>
+
 </html>

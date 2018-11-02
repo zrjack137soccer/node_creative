@@ -12,3 +12,22 @@ h1 {
     font-size: 35px;
     text-shadow: white 2px 2px 10px;
 }
+
+#forecastedWeather {
+    font-size: 25px;
+    text-shadow: white 2px 2px 10px;
+    font-weight: bold;
+}
+
+img {
+    background-color: #000099;
+    padding: 10px;
+    border-radius: 25px;
+    
+}
+
+#validity {
+    font-size: 20px;
+    text-shadow: white 2px 2px 10px;
+    font-weight: bold;
+}
