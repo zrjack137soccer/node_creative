@@ -1,7 +1,7 @@
-var myApp = window.angular.model('myApp');
+var myApp = window.angular.model('myApp', []);
 
-myApp.factory('myFactory', myFactory)
-myApp.controller('myCtrl', myCtrl)
+myApp.factory('myFactory', myFactory);
+myApp.controller('myCtrl', myCtrl);
 
 function myFactory ($http) {
 var API_ROOT = '/woeid';
@@ -18,4 +18,14 @@ return {
     
     }
 };
+}
+
+function myCtrl ($scope, myFactory) {
+    
+    $scope.cityWoeId = [];
+    
+    myFactory.get()
+    .then(function(data) {
+        $scope.cityWoeId = data.woeid;
+    });
 }
