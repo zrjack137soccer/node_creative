@@ -1,7 +1,7 @@
 <html>
     <head>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="javascripts/angular.js"></script>
         <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
         <meta charset="utf-8">
@@ -10,26 +10,15 @@
     
     <body>
         <h1>The weather forecast is:</h1>
-        
-        <div ng-repeat="day in weatherList" id="forecastedWeather">
-            
-        </div>
-        <br>
         <div ng-app="myApp" ng-controller="myCtrl">
+            <div ng-repeat="day in forecastList" id="forecastedWeather">
+            <p>{{day}}</p>
+            </div>
+            <br>
             <form ng-submit="forecast()" id="weatherInputForm">
                 <input id="inputCity" ng-model="userCity" type="text" placeholder="Enter a city to search" />
                 <button type="submit" id="weatherBtn">Submit</button>
             </form>
-        </div>
-        <br>
-        <br>
-        <h1>City information</h1>
-        <div id="cityFacts">
-            <ul ng-repeat="fact in factList" id="cityFactsList">
-                <li>{{fact}}</li>
-            </ul>
-        </div>
-        
     </body>
     
 </html>
