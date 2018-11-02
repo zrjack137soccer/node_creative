@@ -1,4 +1,4 @@
-var myApp = window.angular.model('myApp', []);
+/*var myApp = window.angular.module('myApp', []);
 
 myApp.factory('myFactory', myFactory);
 myApp.controller('myCtrl', myCtrl);
@@ -28,4 +28,23 @@ function myCtrl ($scope, myFactory) {
     .then(function(data) {
         $scope.cityWoeId = data.woeid;
     });
-}
+}*/
+
+var app = angular.module('myApp', [])
+app.controller('myCtrl', function($scope, $http) {
+    $scope.forecast = function() {
+        $scope.woeidSearch = "/woeid?q=" + $scope.userCity;
+        $scope.woeID = "";
+        $http.get($scope.woeidSearch).then(function(response) {
+            console.log(response);
+            $scope.woeID = response["data"][0]["woeid"];
+            console.log($scope.woeID);
+            $scope.weatherSearch = "/forecast?q=" + $scope.woeID;
+            console.log($scope.weatherSearch);
+            $http.get($scope.weatherSearch).then(function(response) {
+                console.log(response);
+            })
+        })
+       
+    }
+})

@@ -16,7 +16,7 @@
         </div>
         <br>
         <div ng-app="myApp" ng-controller="myCtrl">
-            <form ng-submit="forecast" id="weatherInputForm">
+            <form ng-submit="forecast()" id="weatherInputForm">
                 <input id="inputCity" ng-model="userCity" type="text" placeholder="Enter a city to search" />
                 <button type="submit" id="weatherBtn">Submit</button>
             </form>
